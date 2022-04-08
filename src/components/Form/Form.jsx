@@ -47,7 +47,7 @@ const Form = ({currentId, setCurrentId}) => {
   }
 
   return (
-    <Paper className={classes.paper}>
+    <Paper className={classes.paper} elevation={3}>
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6"> {currentId ? 'Editing' : 'Creating'} a memory </Typography>
         <TextField
@@ -70,6 +70,7 @@ const Form = ({currentId, setCurrentId}) => {
           name="message"
           variant="outlined"
           label="Message"
+          multiline
           fullWidth
           value={postData.message}
           onChange={(e) => setPostData({ ...postData, message: e.target.value })}
@@ -80,7 +81,7 @@ const Form = ({currentId, setCurrentId}) => {
           label="Tags"
           fullWidth
           value={postData.tags}
-          onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+          onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
         />
         <div className={classes.fileInput}>
           <Filebase
