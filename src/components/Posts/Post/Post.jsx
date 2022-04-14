@@ -7,7 +7,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import useStyles from "./styles";
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
-import { deletePost, likePost } from '../../../actions/post';
+import { deletePost, likePost } from '../../../actions/posts.action';
   
 const Post = ({post, setCurrentId}) => {
   const classes = useStyles();
@@ -28,7 +28,7 @@ const Post = ({post, setCurrentId}) => {
   };
 
   return (
-    <Card className={classes.card}>
+    <Card className={`animate__animated animate__fadeIn ${classes.card}`}>
       <CardMedia className={classes.media} image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={post.title}/>
       <div className={classes.overlay}>
         <Typography variant='h6' className={classes.creator}>{post.creatorName}</Typography>

@@ -10,12 +10,18 @@ export default makeStyles((theme) => ({
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: '10px 50px',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+      },
     },
     heading: {
       color: 'rgba(0,183,255, 1)',
+      textDecoration: 'none',
+      fontFamily: 'Permanent Marker, cursive',
     },
     image: {
       marginLeft: '15px',
+      marginTop: '5px',
     },
     toolbar: {
       display: 'flex',
@@ -26,10 +32,17 @@ export default makeStyles((theme) => ({
       display: 'flex',
       justifyContent: 'space-between',
       width: '400px',
+      alignItems: 'center',
+      [theme.breakpoints.down('sm')]: {
+        width: 'auto',
+        marginTop: 20,
+        justifyContent: 'center',
+      },
     },
     userName: {
       display: 'flex',
       alignItems: 'center',
+      textAlign: 'center',
     },
     brandContainer: {
       display: 'flex',

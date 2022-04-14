@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TextField, Paper, Button, Typography } from "@material-ui/core";
 import Filebase from 'react-file-base64';
 import useStyles from "./styles";
-import { createPost, updatePost } from '../../actions/post';
+import { createPost, updatePost } from '../../actions/posts.action';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Form = ({currentId, setCurrentId}) => {
