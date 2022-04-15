@@ -4,11 +4,13 @@ import Filebase from 'react-file-base64';
 import useStyles from "./styles";
 import { createPost, updatePost } from '../../actions/posts.action';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const Form = ({currentId, setCurrentId}) => {
   const post = useSelector(state => currentId ? state.posts.posts.find(post => post._id === currentId) : null);
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
   const user = JSON.parse(localStorage.getItem('profile'));
   
   useEffect(() => {
@@ -30,7 +32,7 @@ const Form = ({currentId, setCurrentId}) => {
     if (currentId) {
       dispatch(updatePost(currentId, {...postData, creatorName: user?.result?.name}));
     }else{
-      dispatch(createPost({...postData, creatorName: user?.result?.name}));
+      dispatch(createPost({...postData, creatorName: user?.result?.name},history));
     }
     clear();
   }
