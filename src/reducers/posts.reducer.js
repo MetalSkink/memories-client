@@ -19,6 +19,11 @@ export default (state = {isLoading: true, posts: []}, action) => {
         curentPage: action.payload.currentPage,
         numberOfPages: action.payload.numberOfPages,
       };
+    case types.FETCH_POST:
+      return {
+        ...state,
+        post: action.payload,
+      };
     case types.FETCH_BY_SEARCH:
       return {
         ...state,

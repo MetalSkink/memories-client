@@ -1,5 +1,6 @@
 export const types = {
   FETCH_ALL : 'FETCH_ALL',
+  FETCH_POST : 'FETCH_POST',
   FETCH_BY_SEARCH : 'FETCH_BY_SEARCH',
   CREATE : 'CREATE',
   UPDATE : 'UPDATE',
@@ -9,4 +10,6 @@ export const types = {
 
   START_LOADING: 'START_LOADING',
   STOP_LOADING: 'STOP_LOADING',
+
+
 }

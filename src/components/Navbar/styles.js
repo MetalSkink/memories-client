@@ -18,6 +18,9 @@ export default makeStyles((theme) => ({
       color: 'rgba(0,183,255, 1)',
       textDecoration: 'none',
       fontFamily: 'Permanent Marker, cursive',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '3rem'
+      },
     },
     image: {
       marginLeft: '15px',
@@ -27,6 +30,9 @@ export default makeStyles((theme) => ({
       display: 'flex',
       justifyContent: 'flex-end',
       width: '400px',
+      [theme.breakpoints.down('sm')]: {
+        width: '200px',
+      },
     },
     profile: {
       display: 'flex',
